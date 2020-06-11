@@ -24,4 +24,5 @@ public class AdminController {
     public String tologin(){
         return null;
     }
+
 }
