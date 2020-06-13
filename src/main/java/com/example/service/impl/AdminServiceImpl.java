@@ -21,11 +21,14 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public boolean validate(String username, String password) {
+    public boolean validateAdmin(String username, String password) {
         AdminExample adminExample=new AdminExample();
         adminExample.createCriteria().andUsernameEqualTo(username).andPasswordEqualTo(password);
         List<Admin> admins=adminMapper.selectByExample(adminExample);
         System.out.println(admins.size());
         return admins.size()>0?true:false;
     }
+
+
+
 }

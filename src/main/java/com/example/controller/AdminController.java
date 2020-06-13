@@ -12,15 +12,11 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
+@RequestMapping("/admin")
 public class AdminController {
 
     @Autowired
     private AdminService adminService;
-//jsp页面
-//    @RequestMapping("/admin")
-//    public String toAdmin(){
-//        return "admin";
-//    }
 
     @RequestMapping("/new")
     public ModelAndView toNew(){
@@ -29,18 +25,19 @@ public class AdminController {
         mav.addObject("news","欢迎来到登录页面");
         return mav;
     }
-    //允许跨域
-    @CrossOrigin(origins = "*")
+
+
+    @CrossOrigin(origins = "*")//允许跨域
     @RequestMapping("/validate")
     @ResponseBody //返回JSON数据
-    public String validate(String username,String password){
-        boolean result=adminService.validate(username,password);
+    public boolean validate(String username,String password){
+        boolean result=adminService.validateAdmin(username,password);
         adminService.findAll();
         if(result){
-            return "登录成功";
+            return true;
         }
         else{
-            return "登录失败";
+            return false;
         }
     }
 

@@ -7,5 +7,6 @@ public interface AdminService {
 
     List<Admin> findAll();
 
-    boolean validate(String username,String password);
+    boolean validateAdmin(String username,String password);
+
 }
