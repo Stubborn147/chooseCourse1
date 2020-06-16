@@ -18,6 +18,11 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
+    @RequestMapping("/index")
+    public String toIndex(){
+        return "admin";
+    }
+
     @RequestMapping("/new")
     public ModelAndView toNew(){
         ModelAndView mav=new ModelAndView();

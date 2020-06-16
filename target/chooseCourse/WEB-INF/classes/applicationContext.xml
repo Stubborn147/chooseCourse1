@@ -11,8 +11,6 @@
        https://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <!--配置文件转到MobilePhone类中，包扫描标签标识 base-package基础包，
     可以添加多个基础包用逗号分隔-->
-    <!--    <context:component-scan base-package="com.spring.entity"></context:component-scan>-->
-
     <!--添加mvc分层之后，spring扫描的包是Service层(biz)  调用实现的方法-->
     <context:component-scan base-package="com.example"></context:component-scan>
 
