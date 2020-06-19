@@ -18,10 +18,16 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
+//    @RequestMapping("/index")
+//    public String toIndex(){
+//        return "admin";
+//    }
+
     @RequestMapping("/index")
     public String toIndex(){
-        return "admin";
+        return "index";
     }
+
 
     @RequestMapping("/new")
     public ModelAndView toNew(){
@@ -51,5 +57,13 @@ public class AdminController {
     public List<Admin> getAllAdmin(){
         List<Admin> list=adminService.findAll();
         return list;
+    }
+
+    @RequestMapping("/aa")
+    public ModelAndView toAdmin(){
+        ModelAndView mav=new ModelAndView();
+        mav.setViewName("admin");
+        mav.addObject("admins","欢迎来到管理员页面");
+        return mav;
     }
 }

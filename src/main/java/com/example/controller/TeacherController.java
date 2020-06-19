@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
-
+@CrossOrigin(origins = "*")
 @Controller
 @RequestMapping("/teacher")
 public class TeacherController {
@@ -23,7 +23,7 @@ public class TeacherController {
         return teacherService.getAllTeacher();
     }
 
-    @CrossOrigin(origins = "*")
+
     @RequestMapping("/validate")
     @ResponseBody
     public boolean validate(String username2,String password2){

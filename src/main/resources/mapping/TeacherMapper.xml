@@ -7,7 +7,7 @@
     <result column="tpwd" jdbcType="VARCHAR" property="tpwd" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
-    <result column="teach course" jdbcType="VARCHAR" property="teachCourse" />
+    <result column="teach_course" jdbcType="VARCHAR" property="teachCourse" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -68,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    tid, tname, tpwd, title, phone, "teach course"
+    tid, tname, tpwd, title, phone, teach_course
   </sql>
   <select id="selectByExample" parameterType="com.example.entity.TeacherExample" resultMap="BaseResultMap">
     select
@@ -102,7 +102,7 @@
   </delete>
   <insert id="insert" parameterType="com.example.entity.Teacher">
     insert into teacher (tid, tname, tpwd, 
-      title, phone, "teach course"
+      title, phone, teach_course
       )
     values (#{tid,jdbcType=VARCHAR}, #{tname,jdbcType=VARCHAR}, #{tpwd,jdbcType=VARCHAR}, 
       #{title,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{teachCourse,jdbcType=VARCHAR}
@@ -127,7 +127,7 @@
         phone,
       </if>
       <if test="teachCourse != null">
-        "teach course",
+        teach_course,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -176,7 +176,7 @@
         phone = #{record.phone,jdbcType=VARCHAR},
       </if>
       <if test="record.teachCourse != null">
-        "teach course" = #{record.teachCourse,jdbcType=VARCHAR},
+        teach_course = #{record.teachCourse,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -190,7 +190,7 @@
       tpwd = #{record.tpwd,jdbcType=VARCHAR},
       title = #{record.title,jdbcType=VARCHAR},
       phone = #{record.phone,jdbcType=VARCHAR},
-      "teach course" = #{record.teachCourse,jdbcType=VARCHAR}
+      teach_course = #{record.teachCourse,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -211,7 +211,7 @@
         phone = #{phone,jdbcType=VARCHAR},
       </if>
       <if test="teachCourse != null">
-        "teach course" = #{teachCourse,jdbcType=VARCHAR},
+        teach_course = #{teachCourse,jdbcType=VARCHAR},
       </if>
     </set>
     where tid = #{tid,jdbcType=VARCHAR}
@@ -222,7 +222,7 @@
       tpwd = #{tpwd,jdbcType=VARCHAR},
       title = #{title,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
-      "teach course" = #{teachCourse,jdbcType=VARCHAR}
+      teach_course = #{teachCourse,jdbcType=VARCHAR}
     where tid = #{tid,jdbcType=VARCHAR}
   </update>
 </mapper>

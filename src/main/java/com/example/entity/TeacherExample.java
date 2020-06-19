@@ -455,72 +455,72 @@ public class TeacherExample {
         }
 
         public Criteria andTeachCourseIsNull() {
-            addCriterion("\"teach course\" is null");
+            addCriterion("teach_course is null");
             return (Criteria) this;
         }
 
         public Criteria andTeachCourseIsNotNull() {
-            addCriterion("\"teach course\" is not null");
+            addCriterion("teach_course is not null");
             return (Criteria) this;
         }
 
         public Criteria andTeachCourseEqualTo(String value) {
-            addCriterion("\"teach course\" =", value, "teachCourse");
+            addCriterion("teach_course =", value, "teachCourse");
             return (Criteria) this;
         }
 
         public Criteria andTeachCourseNotEqualTo(String value) {
-            addCriterion("\"teach course\" <>", value, "teachCourse");
+            addCriterion("teach_course <>", value, "teachCourse");
             return (Criteria) this;
         }
 
         public Criteria andTeachCourseGreaterThan(String value) {
-            addCriterion("\"teach course\" >", value, "teachCourse");
+            addCriterion("teach_course >", value, "teachCourse");
             return (Criteria) this;
         }
 
         public Criteria andTeachCourseGreaterThanOrEqualTo(String value) {
-            addCriterion("\"teach course\" >=", value, "teachCourse");
+            addCriterion("teach_course >=", value, "teachCourse");
             return (Criteria) this;
         }
 
         public Criteria andTeachCourseLessThan(String value) {
-            addCriterion("\"teach course\" <", value, "teachCourse");
+            addCriterion("teach_course <", value, "teachCourse");
             return (Criteria) this;
         }
 
         public Criteria andTeachCourseLessThanOrEqualTo(String value) {
-            addCriterion("\"teach course\" <=", value, "teachCourse");
+            addCriterion("teach_course <=", value, "teachCourse");
             return (Criteria) this;
         }
 
         public Criteria andTeachCourseLike(String value) {
-            addCriterion("\"teach course\" like", value, "teachCourse");
+            addCriterion("teach_course like", value, "teachCourse");
             return (Criteria) this;
         }
 
         public Criteria andTeachCourseNotLike(String value) {
-            addCriterion("\"teach course\" not like", value, "teachCourse");
+            addCriterion("teach_course not like", value, "teachCourse");
             return (Criteria) this;
         }
 
         public Criteria andTeachCourseIn(List<String> values) {
-            addCriterion("\"teach course\" in", values, "teachCourse");
+            addCriterion("teach_course in", values, "teachCourse");
             return (Criteria) this;
         }
 
         public Criteria andTeachCourseNotIn(List<String> values) {
-            addCriterion("\"teach course\" not in", values, "teachCourse");
+            addCriterion("teach_course not in", values, "teachCourse");
             return (Criteria) this;
         }
 
         public Criteria andTeachCourseBetween(String value1, String value2) {
-            addCriterion("\"teach course\" between", value1, value2, "teachCourse");
+            addCriterion("teach_course between", value1, value2, "teachCourse");
             return (Criteria) this;
         }
 
         public Criteria andTeachCourseNotBetween(String value1, String value2) {
-            addCriterion("\"teach course\" not between", value1, value2, "teachCourse");
+            addCriterion("teach_course not between", value1, value2, "teachCourse");
             return (Criteria) this;
         }
     }

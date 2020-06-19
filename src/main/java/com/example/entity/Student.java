@@ -11,11 +11,13 @@ public class Student {
 
     private String gender;
 
-    private Date birthday;
+    private String birthday;
 
     private String address;
 
     private String className;
+
+    private Double credit;
 
     public String getSid() {
         return sid;
@@ -49,11 +51,11 @@ public class Student {
         this.gender = gender == null ? null : gender.trim();
     }
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
@@ -71,5 +73,13 @@ public class Student {
 
     public void setClassName(String className) {
         this.className = className == null ? null : className.trim();
+    }
+
+    public Double getCredit() {
+        return credit;
+    }
+
+    public void setCredit(Double credit) {
+        this.credit = credit;
     }
 }

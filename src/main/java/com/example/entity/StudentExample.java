@@ -611,6 +611,66 @@ public class StudentExample {
             addCriterion("class_name not between", value1, value2, "className");
             return (Criteria) this;
         }
+
+        public Criteria andCreditIsNull() {
+            addCriterion("credit is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreditIsNotNull() {
+            addCriterion("credit is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreditEqualTo(Double value) {
+            addCriterion("credit =", value, "credit");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreditNotEqualTo(Double value) {
+            addCriterion("credit <>", value, "credit");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreditGreaterThan(Double value) {
+            addCriterion("credit >", value, "credit");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreditGreaterThanOrEqualTo(Double value) {
+            addCriterion("credit >=", value, "credit");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreditLessThan(Double value) {
+            addCriterion("credit <", value, "credit");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreditLessThanOrEqualTo(Double value) {
+            addCriterion("credit <=", value, "credit");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreditIn(List<Double> values) {
+            addCriterion("credit in", values, "credit");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreditNotIn(List<Double> values) {
+            addCriterion("credit not in", values, "credit");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreditBetween(Double value1, Double value2) {
+            addCriterion("credit between", value1, value2, "credit");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreditNotBetween(Double value1, Double value2) {
+            addCriterion("credit not between", value1, value2, "credit");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {
