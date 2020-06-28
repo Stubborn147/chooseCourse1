@@ -22,9 +22,40 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public boolean delOneStudent(String sid) {
+        return studentMapper.deleteByPrimaryKey(sid)>0?true:false;
+    }
+
+    @Override
     public List<Student> getAllStudent() {
         StudentExample example=new StudentExample();
         return studentMapper.selectByExample(example);
+    }
+
+    @Override
+    public Student getOneStudent(String sid) {
+        return studentMapper.selectByPrimaryKey(sid);
+    }
+
+    @Override
+    public void importStudent(List<Student> students) {
+        for(Student stu:students){
+            studentMapper.insert(stu);
+        }
+    }
+
+    @Override
+    public boolean updateStudent(Student student,StudentExample example) {
+        return studentMapper.updateByExampleSelective(student,example)>0?true:false;
+    }
+
+    @Override
+    public boolean updatePwd(String sid, String pwd) {
+        StudentExample example=new StudentExample();
+        example.createCriteria().andSidEqualTo(sid);
+        Student student=new Student();
+        student.setPwd(pwd);
+        return studentMapper.updateByExampleSelective(student,example)>0?true:false;
     }
 
 }

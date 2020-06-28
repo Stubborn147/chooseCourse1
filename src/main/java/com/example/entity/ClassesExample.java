@@ -3,14 +3,14 @@ package com.example.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdminExample {
+public class ClassesExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public AdminExample() {
+    public ClassesExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -104,273 +104,263 @@ public class AdminExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andAidIsNull() {
-            addCriterion("aid is null");
+        public Criteria andIdIsNull() {
+            addCriterion("id is null");
             return (Criteria) this;
         }
 
-        public Criteria andAidIsNotNull() {
-            addCriterion("aid is not null");
+        public Criteria andIdIsNotNull() {
+            addCriterion("id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAidEqualTo(Integer value) {
-            addCriterion("aid =", value, "aid");
+        public Criteria andIdEqualTo(Integer value) {
+            addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAidNotEqualTo(Integer value) {
-            addCriterion("aid <>", value, "aid");
+        public Criteria andIdNotEqualTo(Integer value) {
+            addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAidGreaterThan(Integer value) {
-            addCriterion("aid >", value, "aid");
+        public Criteria andIdGreaterThan(Integer value) {
+            addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("aid >=", value, "aid");
+        public Criteria andIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAidLessThan(Integer value) {
-            addCriterion("aid <", value, "aid");
+        public Criteria andIdLessThan(Integer value) {
+            addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAidLessThanOrEqualTo(Integer value) {
-            addCriterion("aid <=", value, "aid");
+        public Criteria andIdLessThanOrEqualTo(Integer value) {
+            addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAidIn(List<Integer> values) {
-            addCriterion("aid in", values, "aid");
+        public Criteria andIdIn(List<Integer> values) {
+            addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAidNotIn(List<Integer> values) {
-            addCriterion("aid not in", values, "aid");
+        public Criteria andIdNotIn(List<Integer> values) {
+            addCriterion("id not in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAidBetween(Integer value1, Integer value2) {
-            addCriterion("aid between", value1, value2, "aid");
+        public Criteria andIdBetween(Integer value1, Integer value2) {
+            addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAidNotBetween(Integer value1, Integer value2) {
-            addCriterion("aid not between", value1, value2, "aid");
+        public Criteria andIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameIsNull() {
-            addCriterion("username is null");
+        public Criteria andClassNameIsNull() {
+            addCriterion("class_name is null");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameIsNotNull() {
-            addCriterion("username is not null");
+        public Criteria andClassNameIsNotNull() {
+            addCriterion("class_name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameEqualTo(String value) {
-            addCriterion("username =", value, "username");
+        public Criteria andClassNameEqualTo(String value) {
+            addCriterion("class_name =", value, "className");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameNotEqualTo(String value) {
-            addCriterion("username <>", value, "username");
+        public Criteria andClassNameNotEqualTo(String value) {
+            addCriterion("class_name <>", value, "className");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameGreaterThan(String value) {
-            addCriterion("username >", value, "username");
+        public Criteria andClassNameGreaterThan(String value) {
+            addCriterion("class_name >", value, "className");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameGreaterThanOrEqualTo(String value) {
-            addCriterion("username >=", value, "username");
+        public Criteria andClassNameGreaterThanOrEqualTo(String value) {
+            addCriterion("class_name >=", value, "className");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameLessThan(String value) {
-            addCriterion("username <", value, "username");
+        public Criteria andClassNameLessThan(String value) {
+            addCriterion("class_name <", value, "className");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameLessThanOrEqualTo(String value) {
-            addCriterion("username <=", value, "username");
+        public Criteria andClassNameLessThanOrEqualTo(String value) {
+            addCriterion("class_name <=", value, "className");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameLike(String value) {
-            addCriterion("username like", value, "username");
+        public Criteria andClassNameLike(String value) {
+            addCriterion("class_name like", value, "className");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameNotLike(String value) {
-            addCriterion("username not like", value, "username");
+        public Criteria andClassNameNotLike(String value) {
+            addCriterion("class_name not like", value, "className");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameIn(List<String> values) {
-            addCriterion("username in", values, "username");
+        public Criteria andClassNameIn(List<String> values) {
+            addCriterion("class_name in", values, "className");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameNotIn(List<String> values) {
-            addCriterion("username not in", values, "username");
+        public Criteria andClassNameNotIn(List<String> values) {
+            addCriterion("class_name not in", values, "className");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameBetween(String value1, String value2) {
-            addCriterion("username between", value1, value2, "username");
+        public Criteria andClassNameBetween(String value1, String value2) {
+            addCriterion("class_name between", value1, value2, "className");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameNotBetween(String value1, String value2) {
-            addCriterion("username not between", value1, value2, "username");
+        public Criteria andClassNameNotBetween(String value1, String value2) {
+            addCriterion("class_name not between", value1, value2, "className");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordIsNull() {
-            addCriterion("password is null");
+        public Criteria andClassNumIsNull() {
+            addCriterion("class_num is null");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordIsNotNull() {
-            addCriterion("password is not null");
+        public Criteria andClassNumIsNotNull() {
+            addCriterion("class_num is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordEqualTo(String value) {
-            addCriterion("password =", value, "password");
+        public Criteria andClassNumEqualTo(Integer value) {
+            addCriterion("class_num =", value, "classNum");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordNotEqualTo(String value) {
-            addCriterion("password <>", value, "password");
+        public Criteria andClassNumNotEqualTo(Integer value) {
+            addCriterion("class_num <>", value, "classNum");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordGreaterThan(String value) {
-            addCriterion("password >", value, "password");
+        public Criteria andClassNumGreaterThan(Integer value) {
+            addCriterion("class_num >", value, "classNum");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordGreaterThanOrEqualTo(String value) {
-            addCriterion("password >=", value, "password");
+        public Criteria andClassNumGreaterThanOrEqualTo(Integer value) {
+            addCriterion("class_num >=", value, "classNum");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordLessThan(String value) {
-            addCriterion("password <", value, "password");
+        public Criteria andClassNumLessThan(Integer value) {
+            addCriterion("class_num <", value, "classNum");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordLessThanOrEqualTo(String value) {
-            addCriterion("password <=", value, "password");
+        public Criteria andClassNumLessThanOrEqualTo(Integer value) {
+            addCriterion("class_num <=", value, "classNum");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordLike(String value) {
-            addCriterion("password like", value, "password");
+        public Criteria andClassNumIn(List<Integer> values) {
+            addCriterion("class_num in", values, "classNum");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordNotLike(String value) {
-            addCriterion("password not like", value, "password");
+        public Criteria andClassNumNotIn(List<Integer> values) {
+            addCriterion("class_num not in", values, "classNum");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordIn(List<String> values) {
-            addCriterion("password in", values, "password");
+        public Criteria andClassNumBetween(Integer value1, Integer value2) {
+            addCriterion("class_num between", value1, value2, "classNum");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordNotIn(List<String> values) {
-            addCriterion("password not in", values, "password");
+        public Criteria andClassNumNotBetween(Integer value1, Integer value2) {
+            addCriterion("class_num not between", value1, value2, "classNum");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordBetween(String value1, String value2) {
-            addCriterion("password between", value1, value2, "password");
+        public Criteria andClassMasterIsNull() {
+            addCriterion("class_master is null");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordNotBetween(String value1, String value2) {
-            addCriterion("password not between", value1, value2, "password");
+        public Criteria andClassMasterIsNotNull() {
+            addCriterion("class_master is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTelephoneIsNull() {
-            addCriterion("telephone is null");
+        public Criteria andClassMasterEqualTo(String value) {
+            addCriterion("class_master =", value, "classMaster");
             return (Criteria) this;
         }
 
-        public Criteria andTelephoneIsNotNull() {
-            addCriterion("telephone is not null");
+        public Criteria andClassMasterNotEqualTo(String value) {
+            addCriterion("class_master <>", value, "classMaster");
             return (Criteria) this;
         }
 
-        public Criteria andTelephoneEqualTo(String value) {
-            addCriterion("telephone =", value, "telephone");
+        public Criteria andClassMasterGreaterThan(String value) {
+            addCriterion("class_master >", value, "classMaster");
             return (Criteria) this;
         }
 
-        public Criteria andTelephoneNotEqualTo(String value) {
-            addCriterion("telephone <>", value, "telephone");
+        public Criteria andClassMasterGreaterThanOrEqualTo(String value) {
+            addCriterion("class_master >=", value, "classMaster");
             return (Criteria) this;
         }
 
-        public Criteria andTelephoneGreaterThan(String value) {
-            addCriterion("telephone >", value, "telephone");
+        public Criteria andClassMasterLessThan(String value) {
+            addCriterion("class_master <", value, "classMaster");
             return (Criteria) this;
         }
 
-        public Criteria andTelephoneGreaterThanOrEqualTo(String value) {
-            addCriterion("telephone >=", value, "telephone");
+        public Criteria andClassMasterLessThanOrEqualTo(String value) {
+            addCriterion("class_master <=", value, "classMaster");
             return (Criteria) this;
         }
 
-        public Criteria andTelephoneLessThan(String value) {
-            addCriterion("telephone <", value, "telephone");
+        public Criteria andClassMasterLike(String value) {
+            addCriterion("class_master like", value, "classMaster");
             return (Criteria) this;
         }
 
-        public Criteria andTelephoneLessThanOrEqualTo(String value) {
-            addCriterion("telephone <=", value, "telephone");
+        public Criteria andClassMasterNotLike(String value) {
+            addCriterion("class_master not like", value, "classMaster");
             return (Criteria) this;
         }
 
-        public Criteria andTelephoneLike(String value) {
-            addCriterion("telephone like", value, "telephone");
+        public Criteria andClassMasterIn(List<String> values) {
+            addCriterion("class_master in", values, "classMaster");
             return (Criteria) this;
         }
 
-        public Criteria andTelephoneNotLike(String value) {
-            addCriterion("telephone not like", value, "telephone");
+        public Criteria andClassMasterNotIn(List<String> values) {
+            addCriterion("class_master not in", values, "classMaster");
             return (Criteria) this;
         }
 
-        public Criteria andTelephoneIn(List<String> values) {
-            addCriterion("telephone in", values, "telephone");
+        public Criteria andClassMasterBetween(String value1, String value2) {
+            addCriterion("class_master between", value1, value2, "classMaster");
             return (Criteria) this;
         }
 
-        public Criteria andTelephoneNotIn(List<String> values) {
-            addCriterion("telephone not in", values, "telephone");
-            return (Criteria) this;
-        }
-
-        public Criteria andTelephoneBetween(String value1, String value2) {
-            addCriterion("telephone between", value1, value2, "telephone");
-            return (Criteria) this;
-        }
-
-        public Criteria andTelephoneNotBetween(String value1, String value2) {
-            addCriterion("telephone not between", value1, value2, "telephone");
+        public Criteria andClassMasterNotBetween(String value1, String value2) {
+            addCriterion("class_master not between", value1, value2, "classMaster");
             return (Criteria) this;
         }
     }

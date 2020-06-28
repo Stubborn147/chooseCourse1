@@ -5,12 +5,14 @@
     <id column="course_id" jdbcType="VARCHAR" property="courseId" />
     <result column="course_name" jdbcType="VARCHAR" property="courseName" />
     <result column="course_introduce" jdbcType="VARCHAR" property="courseIntroduce" />
-    <result column="course_time" jdbcType="TIMESTAMP" property="courseTime" />
+    <result column="course_time" jdbcType="VARCHAR" property="courseTime" />
     <result column="course_tid" jdbcType="VARCHAR" property="courseTid" />
     <result column="max_num" jdbcType="INTEGER" property="maxNum" />
     <result column="credit" jdbcType="VARCHAR" property="credit" />
     <result column="period" jdbcType="VARCHAR" property="period" />
-    <result column="choose_time" jdbcType="TIMESTAMP" property="chooseTime" />
+    <result column="location" jdbcType="VARCHAR" property="location" />
+    <result column="course_img" jdbcType="VARCHAR" property="courseImg" />
+    <result column="coursevideo" jdbcType="VARCHAR" property="coursevideo" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -72,7 +74,7 @@
   </sql>
   <sql id="Base_Column_List">
     course_id, course_name, course_introduce, course_time, course_tid, max_num, credit, 
-    period, choose_time
+    period, location, course_img, coursevideo
   </sql>
   <select id="selectByExample" parameterType="com.example.entity.CourseExample" resultMap="BaseResultMap">
     select
@@ -94,6 +96,12 @@
     from course
     where course_id = #{courseId,jdbcType=VARCHAR}
   </select>
+  <select id="selectByCourseTid" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from course
+    where course_tid = #{courseTid,jdbcType=VARCHAR}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from course
     where course_id = #{courseId,jdbcType=VARCHAR}
@@ -107,12 +115,12 @@
   <insert id="insert" parameterType="com.example.entity.Course">
     insert into course (course_id, course_name, course_introduce, 
       course_time, course_tid, max_num, 
-      credit, period, choose_time
-      )
+      credit, period, location, 
+      course_img, coursevideo)
     values (#{courseId,jdbcType=VARCHAR}, #{courseName,jdbcType=VARCHAR}, #{courseIntroduce,jdbcType=VARCHAR}, 
-      #{courseTime,jdbcType=TIMESTAMP}, #{courseTid,jdbcType=VARCHAR}, #{maxNum,jdbcType=INTEGER}, 
-      #{credit,jdbcType=VARCHAR}, #{period,jdbcType=VARCHAR}, #{chooseTime,jdbcType=TIMESTAMP}
-      )
+      #{courseTime,jdbcType=VARCHAR}, #{courseTid,jdbcType=VARCHAR}, #{maxNum,jdbcType=INTEGER}, 
+      #{credit,jdbcType=VARCHAR}, #{period,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, 
+      #{courseImg,jdbcType=VARCHAR}, #{coursevideo,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.example.entity.Course">
     insert into course
@@ -141,8 +149,14 @@
       <if test="period != null">
         period,
       </if>
-      <if test="chooseTime != null">
-        choose_time,
+      <if test="location != null">
+        location,
+      </if>
+      <if test="courseImg != null">
+        course_img,
+      </if>
+      <if test="coursevideo != null">
+        coursevideo,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -156,7 +170,7 @@
         #{courseIntroduce,jdbcType=VARCHAR},
       </if>
       <if test="courseTime != null">
-        #{courseTime,jdbcType=TIMESTAMP},
+        #{courseTime,jdbcType=VARCHAR},
       </if>
       <if test="courseTid != null">
         #{courseTid,jdbcType=VARCHAR},
@@ -170,8 +184,14 @@
       <if test="period != null">
         #{period,jdbcType=VARCHAR},
       </if>
-      <if test="chooseTime != null">
-        #{chooseTime,jdbcType=TIMESTAMP},
+      <if test="location != null">
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="courseImg != null">
+        #{courseImg,jdbcType=VARCHAR},
+      </if>
+      <if test="coursevideo != null">
+        #{coursevideo,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -194,7 +214,7 @@
         course_introduce = #{record.courseIntroduce,jdbcType=VARCHAR},
       </if>
       <if test="record.courseTime != null">
-        course_time = #{record.courseTime,jdbcType=TIMESTAMP},
+        course_time = #{record.courseTime,jdbcType=VARCHAR},
       </if>
       <if test="record.courseTid != null">
         course_tid = #{record.courseTid,jdbcType=VARCHAR},
@@ -208,8 +228,14 @@
       <if test="record.period != null">
         period = #{record.period,jdbcType=VARCHAR},
       </if>
-      <if test="record.chooseTime != null">
-        choose_time = #{record.chooseTime,jdbcType=TIMESTAMP},
+      <if test="record.location != null">
+        location = #{record.location,jdbcType=VARCHAR},
+      </if>
+      <if test="record.courseImg != null">
+        course_img = #{record.courseImg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.coursevideo != null">
+        coursevideo = #{record.coursevideo,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -221,12 +247,14 @@
     set course_id = #{record.courseId,jdbcType=VARCHAR},
       course_name = #{record.courseName,jdbcType=VARCHAR},
       course_introduce = #{record.courseIntroduce,jdbcType=VARCHAR},
-      course_time = #{record.courseTime,jdbcType=TIMESTAMP},
+      course_time = #{record.courseTime,jdbcType=VARCHAR},
       course_tid = #{record.courseTid,jdbcType=VARCHAR},
       max_num = #{record.maxNum,jdbcType=INTEGER},
       credit = #{record.credit,jdbcType=VARCHAR},
       period = #{record.period,jdbcType=VARCHAR},
-      choose_time = #{record.chooseTime,jdbcType=TIMESTAMP}
+      location = #{record.location,jdbcType=VARCHAR},
+      course_img = #{record.courseImg,jdbcType=VARCHAR},
+      coursevideo = #{record.coursevideo,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -241,7 +269,7 @@
         course_introduce = #{courseIntroduce,jdbcType=VARCHAR},
       </if>
       <if test="courseTime != null">
-        course_time = #{courseTime,jdbcType=TIMESTAMP},
+        course_time = #{courseTime,jdbcType=VARCHAR},
       </if>
       <if test="courseTid != null">
         course_tid = #{courseTid,jdbcType=VARCHAR},
@@ -255,8 +283,14 @@
       <if test="period != null">
         period = #{period,jdbcType=VARCHAR},
       </if>
-      <if test="chooseTime != null">
-        choose_time = #{chooseTime,jdbcType=TIMESTAMP},
+      <if test="location != null">
+        location = #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="courseImg != null">
+        course_img = #{courseImg,jdbcType=VARCHAR},
+      </if>
+      <if test="coursevideo != null">
+        coursevideo = #{coursevideo,jdbcType=VARCHAR},
       </if>
     </set>
     where course_id = #{courseId,jdbcType=VARCHAR}
@@ -265,12 +299,14 @@
     update course
     set course_name = #{courseName,jdbcType=VARCHAR},
       course_introduce = #{courseIntroduce,jdbcType=VARCHAR},
-      course_time = #{courseTime,jdbcType=TIMESTAMP},
+      course_time = #{courseTime,jdbcType=VARCHAR},
       course_tid = #{courseTid,jdbcType=VARCHAR},
       max_num = #{maxNum,jdbcType=INTEGER},
       credit = #{credit,jdbcType=VARCHAR},
       period = #{period,jdbcType=VARCHAR},
-      choose_time = #{chooseTime,jdbcType=TIMESTAMP}
+      location = #{location,jdbcType=VARCHAR},
+      course_img = #{courseImg,jdbcType=VARCHAR},
+      coursevideo = #{coursevideo,jdbcType=VARCHAR}
     where course_id = #{courseId,jdbcType=VARCHAR}
   </update>
 </mapper>

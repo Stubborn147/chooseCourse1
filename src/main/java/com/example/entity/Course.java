@@ -1,7 +1,5 @@
 package com.example.entity;
 
-import java.util.Date;
-
 public class Course {
     private String courseId;
 
@@ -9,7 +7,7 @@ public class Course {
 
     private String courseIntroduce;
 
-    private Date courseTime;
+    private String courseTime;
 
     private String courseTid;
 
@@ -19,7 +17,11 @@ public class Course {
 
     private String period;
 
-    private Date chooseTime;
+    private String location;
+
+    private String courseImg;
+
+    private String coursevideo;
 
     public String getCourseId() {
         return courseId;
@@ -45,12 +47,12 @@ public class Course {
         this.courseIntroduce = courseIntroduce == null ? null : courseIntroduce.trim();
     }
 
-    public Date getCourseTime() {
+    public String getCourseTime() {
         return courseTime;
     }
 
-    public void setCourseTime(Date courseTime) {
-        this.courseTime = courseTime;
+    public void setCourseTime(String courseTime) {
+        this.courseTime = courseTime == null ? null : courseTime.trim();
     }
 
     public String getCourseTid() {
@@ -74,7 +76,7 @@ public class Course {
     }
 
     public void setCredit(String credit) {
-        this.credit = credit == null ? null : credit.trim();
+        this.credit = credit;
     }
 
     public String getPeriod() {
@@ -85,11 +87,27 @@ public class Course {
         this.period = period == null ? null : period.trim();
     }
 
-    public Date getChooseTime() {
-        return chooseTime;
+    public String getLocation() {
+        return location;
     }
 
-    public void setChooseTime(Date chooseTime) {
-        this.chooseTime = chooseTime;
+    public void setLocation(String location) {
+        this.location = location == null ? null : location.trim();
+    }
+
+    public String getCourseImg() {
+        return courseImg;
+    }
+
+    public void setCourseImg(String courseImg) {
+        this.courseImg = courseImg == null ? null : courseImg.trim();
+    }
+
+    public String getCoursevideo() {
+        return coursevideo;
+    }
+
+    public void setCoursevideo(String coursevideo) {
+        this.coursevideo = coursevideo == null ? null : coursevideo.trim();
     }
 }

@@ -1,6 +1,6 @@
 package com.example.controller;
-
 import com.example.entity.Admin;
+import com.example.entity.AdminExample;
 import com.example.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,24 +10,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
-
+@CrossOrigin(origins = "*")//允许跨域
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
 
     @Autowired
     private AdminService adminService;
-
-//    @RequestMapping("/index")
-//    public String toIndex(){
-//        return "admin";
-//    }
-
-    @RequestMapping("/index")
-    public String toIndex(){
-        return "index";
-    }
-
 
     @RequestMapping("/new")
     public ModelAndView toNew(){
@@ -38,7 +27,6 @@ public class AdminController {
     }
 
 
-    @CrossOrigin(origins = "*")//允许跨域
     @RequestMapping("/validate")
     @ResponseBody //返回JSON数据
     public boolean validate(String username,String password){
@@ -59,11 +47,21 @@ public class AdminController {
         return list;
     }
 
-    @RequestMapping("/aa")
-    public ModelAndView toAdmin(){
-        ModelAndView mav=new ModelAndView();
-        mav.setViewName("admin");
-        mav.addObject("admins","欢迎来到管理员页面");
-        return mav;
-    }
+   @RequestMapping("/getOneAdmin")
+    @ResponseBody
+    public Admin getOneAdminByUsername(String username){
+        return adminService.getOneAdmin(username);
+   }
+
+   @RequestMapping("/updateByUsername")
+    @ResponseBody
+    public boolean updateByUsername(Admin admin,AdminExample example){
+       example.createCriteria().andUsernameEqualTo(admin.getUsername());
+        boolean result=adminService.updateByUsername(admin,example);
+        if(result){
+            return true;
+        }else{
+            return false;
+        }
+   }
 }

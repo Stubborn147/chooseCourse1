@@ -26,4 +26,44 @@ public class TeacherServiceImpl implements TeacherService {
         List<Teacher> teachers=teacherMapper.selectByExample(teacherExample);
         return teachers.size()>0?true:false;
     }
+
+    @Override
+    public boolean delOneTeacher(String tid) {
+        return teacherMapper.deleteByPrimaryKey(tid)>0?true:false;
+    }
+
+    @Override
+    public void importTeacher(List<Teacher> teachers) {
+        for(Teacher tea:teachers){
+            teacherMapper.insert(tea);
+        }
+    }
+
+    @Override
+    public List<Teacher> getTeacherByName(String tname) {
+        TeacherExample example=new TeacherExample();
+        example.createCriteria().andTnameLike("%"+tname+"%");
+        return teacherMapper.selectByExample(example);
+    }
+
+    @Override
+    public List<Teacher> getTeacherByTeachCourse(String teachCourse) {
+        TeacherExample example=new TeacherExample();
+        example.createCriteria().andTeachCourseLike("%"+teachCourse+"%");
+        return teacherMapper.selectByExample(example);
+    }
+
+    @Override
+    public Teacher getOneTeacherByTid(String tid) {
+        return teacherMapper.selectByPrimaryKey(tid);
+    }
+
+    @Override
+    public boolean updatePwd(String tid, String pwd) {
+        Teacher teacher=new Teacher();
+        teacher.setTpwd(pwd);
+        TeacherExample example=new TeacherExample();
+        example.createCriteria().andTidEqualTo(tid);
+        return teacherMapper.updateByExampleSelective(teacher,example)>0?true:false;
+    }
 }

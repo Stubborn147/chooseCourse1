@@ -1,7 +1,6 @@
 package com.example.entity;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class CourseExample {
@@ -325,52 +324,62 @@ public class CourseExample {
             return (Criteria) this;
         }
 
-        public Criteria andCourseTimeEqualTo(Date value) {
+        public Criteria andCourseTimeEqualTo(String value) {
             addCriterion("course_time =", value, "courseTime");
             return (Criteria) this;
         }
 
-        public Criteria andCourseTimeNotEqualTo(Date value) {
+        public Criteria andCourseTimeNotEqualTo(String value) {
             addCriterion("course_time <>", value, "courseTime");
             return (Criteria) this;
         }
 
-        public Criteria andCourseTimeGreaterThan(Date value) {
+        public Criteria andCourseTimeGreaterThan(String value) {
             addCriterion("course_time >", value, "courseTime");
             return (Criteria) this;
         }
 
-        public Criteria andCourseTimeGreaterThanOrEqualTo(Date value) {
+        public Criteria andCourseTimeGreaterThanOrEqualTo(String value) {
             addCriterion("course_time >=", value, "courseTime");
             return (Criteria) this;
         }
 
-        public Criteria andCourseTimeLessThan(Date value) {
+        public Criteria andCourseTimeLessThan(String value) {
             addCriterion("course_time <", value, "courseTime");
             return (Criteria) this;
         }
 
-        public Criteria andCourseTimeLessThanOrEqualTo(Date value) {
+        public Criteria andCourseTimeLessThanOrEqualTo(String value) {
             addCriterion("course_time <=", value, "courseTime");
             return (Criteria) this;
         }
 
-        public Criteria andCourseTimeIn(List<Date> values) {
+        public Criteria andCourseTimeLike(String value) {
+            addCriterion("course_time like", value, "courseTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseTimeNotLike(String value) {
+            addCriterion("course_time not like", value, "courseTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseTimeIn(List<String> values) {
             addCriterion("course_time in", values, "courseTime");
             return (Criteria) this;
         }
 
-        public Criteria andCourseTimeNotIn(List<Date> values) {
+        public Criteria andCourseTimeNotIn(List<String> values) {
             addCriterion("course_time not in", values, "courseTime");
             return (Criteria) this;
         }
 
-        public Criteria andCourseTimeBetween(Date value1, Date value2) {
+        public Criteria andCourseTimeBetween(String value1, String value2) {
             addCriterion("course_time between", value1, value2, "courseTime");
             return (Criteria) this;
         }
 
-        public Criteria andCourseTimeNotBetween(Date value1, Date value2) {
+        public Criteria andCourseTimeNotBetween(String value1, String value2) {
             addCriterion("course_time not between", value1, value2, "courseTime");
             return (Criteria) this;
         }
@@ -645,63 +654,213 @@ public class CourseExample {
             return (Criteria) this;
         }
 
-        public Criteria andChooseTimeIsNull() {
-            addCriterion("choose_time is null");
+        public Criteria andLocationIsNull() {
+            addCriterion("location is null");
             return (Criteria) this;
         }
 
-        public Criteria andChooseTimeIsNotNull() {
-            addCriterion("choose_time is not null");
+        public Criteria andLocationIsNotNull() {
+            addCriterion("location is not null");
             return (Criteria) this;
         }
 
-        public Criteria andChooseTimeEqualTo(Date value) {
-            addCriterion("choose_time =", value, "chooseTime");
+        public Criteria andLocationEqualTo(String value) {
+            addCriterion("location =", value, "location");
             return (Criteria) this;
         }
 
-        public Criteria andChooseTimeNotEqualTo(Date value) {
-            addCriterion("choose_time <>", value, "chooseTime");
+        public Criteria andLocationNotEqualTo(String value) {
+            addCriterion("location <>", value, "location");
             return (Criteria) this;
         }
 
-        public Criteria andChooseTimeGreaterThan(Date value) {
-            addCriterion("choose_time >", value, "chooseTime");
+        public Criteria andLocationGreaterThan(String value) {
+            addCriterion("location >", value, "location");
             return (Criteria) this;
         }
 
-        public Criteria andChooseTimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("choose_time >=", value, "chooseTime");
+        public Criteria andLocationGreaterThanOrEqualTo(String value) {
+            addCriterion("location >=", value, "location");
             return (Criteria) this;
         }
 
-        public Criteria andChooseTimeLessThan(Date value) {
-            addCriterion("choose_time <", value, "chooseTime");
+        public Criteria andLocationLessThan(String value) {
+            addCriterion("location <", value, "location");
             return (Criteria) this;
         }
 
-        public Criteria andChooseTimeLessThanOrEqualTo(Date value) {
-            addCriterion("choose_time <=", value, "chooseTime");
+        public Criteria andLocationLessThanOrEqualTo(String value) {
+            addCriterion("location <=", value, "location");
             return (Criteria) this;
         }
 
-        public Criteria andChooseTimeIn(List<Date> values) {
-            addCriterion("choose_time in", values, "chooseTime");
+        public Criteria andLocationLike(String value) {
+            addCriterion("location like", value, "location");
             return (Criteria) this;
         }
 
-        public Criteria andChooseTimeNotIn(List<Date> values) {
-            addCriterion("choose_time not in", values, "chooseTime");
+        public Criteria andLocationNotLike(String value) {
+            addCriterion("location not like", value, "location");
             return (Criteria) this;
         }
 
-        public Criteria andChooseTimeBetween(Date value1, Date value2) {
-            addCriterion("choose_time between", value1, value2, "chooseTime");
+        public Criteria andLocationIn(List<String> values) {
+            addCriterion("location in", values, "location");
             return (Criteria) this;
         }
 
-        public Criteria andChooseTimeNotBetween(Date value1, Date value2) {
-            addCriterion("choose_time not between", value1, value2, "chooseTime");
+        public Criteria andLocationNotIn(List<String> values) {
+            addCriterion("location not in", values, "location");
+            return (Criteria) this;
+        }
+
+        public Criteria andLocationBetween(String value1, String value2) {
+            addCriterion("location between", value1, value2, "location");
+            return (Criteria) this;
+        }
+
+        public Criteria andLocationNotBetween(String value1, String value2) {
+            addCriterion("location not between", value1, value2, "location");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgIsNull() {
+            addCriterion("course_img is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgIsNotNull() {
+            addCriterion("course_img is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgEqualTo(String value) {
+            addCriterion("course_img =", value, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgNotEqualTo(String value) {
+            addCriterion("course_img <>", value, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgGreaterThan(String value) {
+            addCriterion("course_img >", value, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgGreaterThanOrEqualTo(String value) {
+            addCriterion("course_img >=", value, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgLessThan(String value) {
+            addCriterion("course_img <", value, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgLessThanOrEqualTo(String value) {
+            addCriterion("course_img <=", value, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgLike(String value) {
+            addCriterion("course_img like", value, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgNotLike(String value) {
+            addCriterion("course_img not like", value, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgIn(List<String> values) {
+            addCriterion("course_img in", values, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgNotIn(List<String> values) {
+            addCriterion("course_img not in", values, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgBetween(String value1, String value2) {
+            addCriterion("course_img between", value1, value2, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgNotBetween(String value1, String value2) {
+            addCriterion("course_img not between", value1, value2, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCoursevideoIsNull() {
+            addCriterion("coursevideo is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCoursevideoIsNotNull() {
+            addCriterion("coursevideo is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCoursevideoEqualTo(String value) {
+            addCriterion("coursevideo =", value, "coursevideo");
+            return (Criteria) this;
+        }
+
+        public Criteria andCoursevideoNotEqualTo(String value) {
+            addCriterion("coursevideo <>", value, "coursevideo");
+            return (Criteria) this;
+        }
+
+        public Criteria andCoursevideoGreaterThan(String value) {
+            addCriterion("coursevideo >", value, "coursevideo");
+            return (Criteria) this;
+        }
+
+        public Criteria andCoursevideoGreaterThanOrEqualTo(String value) {
+            addCriterion("coursevideo >=", value, "coursevideo");
+            return (Criteria) this;
+        }
+
+        public Criteria andCoursevideoLessThan(String value) {
+            addCriterion("coursevideo <", value, "coursevideo");
+            return (Criteria) this;
+        }
+
+        public Criteria andCoursevideoLessThanOrEqualTo(String value) {
+            addCriterion("coursevideo <=", value, "coursevideo");
+            return (Criteria) this;
+        }
+
+        public Criteria andCoursevideoLike(String value) {
+            addCriterion("coursevideo like", value, "coursevideo");
+            return (Criteria) this;
+        }
+
+        public Criteria andCoursevideoNotLike(String value) {
+            addCriterion("coursevideo not like", value, "coursevideo");
+            return (Criteria) this;
+        }
+
+        public Criteria andCoursevideoIn(List<String> values) {
+            addCriterion("coursevideo in", values, "coursevideo");
+            return (Criteria) this;
+        }
+
+        public Criteria andCoursevideoNotIn(List<String> values) {
+            addCriterion("coursevideo not in", values, "coursevideo");
+            return (Criteria) this;
+        }
+
+        public Criteria andCoursevideoBetween(String value1, String value2) {
+            addCriterion("coursevideo between", value1, value2, "coursevideo");
+            return (Criteria) this;
+        }
+
+        public Criteria andCoursevideoNotBetween(String value1, String value2) {
+            addCriterion("coursevideo not between", value1, value2, "coursevideo");
             return (Criteria) this;
         }
     }

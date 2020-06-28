@@ -29,6 +29,13 @@ public class AdminServiceImpl implements AdminService {
         return admins.size()>0?true:false;
     }
 
+    @Override
+    public Admin getOneAdmin(String username) {
+        return adminMapper.selectByUsername(username);
+    }
 
-
+    @Override
+    public boolean updateByUsername(Admin admin, AdminExample example) {
+        return adminMapper.updateByExampleSelective(admin,example)>0?true:false;
+    }
 }

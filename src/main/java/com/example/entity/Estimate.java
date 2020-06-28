@@ -13,7 +13,7 @@ public class Estimate {
 
     private String content;
 
-    private Date estimateTime;
+    private String estimateTime;
 
     public Integer getpId() {
         return pId;
@@ -55,11 +55,12 @@ public class Estimate {
         this.content = content == null ? null : content.trim();
     }
 
-    public Date getEstimateTime() {
+
+    public String getEstimateTime() {
         return estimateTime;
     }
 
-    public void setEstimateTime(Date estimateTime) {
+    public void setEstimateTime(String estimateTime) {
         this.estimateTime = estimateTime;
     }
 }

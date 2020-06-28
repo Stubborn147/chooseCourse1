@@ -18,4 +18,34 @@ public class CourseServiceImpl implements CourseService {
         CourseExample example=new CourseExample();
         return courseMapper.selectByExample(example);
     }
+
+    @Override
+    public boolean delOneStudent(String courseId) {
+        return courseMapper.deleteByPrimaryKey(courseId)>0?true:false;
+    }
+
+    @Override
+    public void importCourse(List<Course> list) {
+        for(Course cou:list){
+            courseMapper.insert(cou);
+        }
+    }
+
+    @Override
+    public List<Course> getCourseByCourseName(String courseName) {
+        CourseExample example=new CourseExample();
+        example.createCriteria().andCourseNameLike("%"+courseName+"%");
+        return courseMapper.selectByExample(example);
+    }
+
+    @Override
+    public Course getOneCourseByCid(String courseId) {
+        return courseMapper.selectByPrimaryKey(courseId);
+    }
+
+    @Override
+    public Course getOneCourseByCourseTid(String courseTid) {
+        return courseMapper.selectByCourseTid(courseTid);
+    }
+
 }

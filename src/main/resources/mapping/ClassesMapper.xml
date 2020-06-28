@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.mapping.AdminMapper">
-  <resultMap id="BaseResultMap" type="com.example.entity.Admin">
-    <id column="aid" jdbcType="INTEGER" property="aid" />
-    <result column="username" jdbcType="VARCHAR" property="username" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+<mapper namespace="com.example.mapping.ClassesMapper">
+  <resultMap id="BaseResultMap" type="com.example.entity.Classes">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="class_name" jdbcType="VARCHAR" property="className" />
+    <result column="class_num" jdbcType="INTEGER" property="classNum" />
+    <result column="class_master" jdbcType="VARCHAR" property="classMaster" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -66,15 +66,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    aid, username, password, telephone
+    id, class_name, class_num, class_master
   </sql>
-  <select id="selectByExample" parameterType="com.example.entity.AdminExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.example.entity.ClassesExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from admin
+    from classes
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -85,76 +85,76 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from admin
-    where aid = #{aid,jdbcType=INTEGER}
+    from classes
+    where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from admin
-    where aid = #{aid,jdbcType=INTEGER}
+    delete from classes
+    where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.example.entity.AdminExample">
-    delete from admin
+  <delete id="deleteByExample" parameterType="com.example.entity.ClassesExample">
+    delete from classes
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.example.entity.Admin">
-    insert into admin (aid, username, password, 
-      telephone)
-    values (#{aid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{telephone,jdbcType=VARCHAR})
+  <insert id="insert" parameterType="com.example.entity.Classes">
+    insert into classes (id, class_name, class_num, 
+      class_master)
+    values (#{id,jdbcType=INTEGER}, #{className,jdbcType=VARCHAR}, #{classNum,jdbcType=INTEGER}, 
+      #{classMaster,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.example.entity.Admin">
-    insert into admin
+  <insert id="insertSelective" parameterType="com.example.entity.Classes">
+    insert into classes
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="aid != null">
-        aid,
+      <if test="id != null">
+        id,
       </if>
-      <if test="username != null">
-        username,
+      <if test="className != null">
+        class_name,
       </if>
-      <if test="password != null">
-        password,
+      <if test="classNum != null">
+        class_num,
       </if>
-      <if test="telephone != null">
-        telephone,
+      <if test="classMaster != null">
+        class_master,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="aid != null">
-        #{aid,jdbcType=INTEGER},
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
       </if>
-      <if test="username != null">
-        #{username,jdbcType=VARCHAR},
+      <if test="className != null">
+        #{className,jdbcType=VARCHAR},
       </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
+      <if test="classNum != null">
+        #{classNum,jdbcType=INTEGER},
       </if>
-      <if test="telephone != null">
-        #{telephone,jdbcType=VARCHAR},
+      <if test="classMaster != null">
+        #{classMaster,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.example.entity.AdminExample" resultType="java.lang.Long">
-    select count(*) from admin
+  <select id="countByExample" parameterType="com.example.entity.ClassesExample" resultType="java.lang.Long">
+    select count(*) from classes
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update admin
+    update classes
     <set>
-      <if test="record.aid != null">
-        aid = #{record.aid,jdbcType=INTEGER},
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.username != null">
-        username = #{record.username,jdbcType=VARCHAR},
+      <if test="record.className != null">
+        class_name = #{record.className,jdbcType=VARCHAR},
       </if>
-      <if test="record.password != null">
-        password = #{record.password,jdbcType=VARCHAR},
+      <if test="record.classNum != null">
+        class_num = #{record.classNum,jdbcType=INTEGER},
       </if>
-      <if test="record.telephone != null">
-        telephone = #{record.telephone,jdbcType=VARCHAR},
+      <if test="record.classMaster != null">
+        class_master = #{record.classMaster,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -162,35 +162,35 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update admin
-    set aid = #{record.aid,jdbcType=INTEGER},
-      username = #{record.username,jdbcType=VARCHAR},
-      password = #{record.password,jdbcType=VARCHAR},
-      telephone = #{record.telephone,jdbcType=VARCHAR}
+    update classes
+    set id = #{record.id,jdbcType=INTEGER},
+      class_name = #{record.className,jdbcType=VARCHAR},
+      class_num = #{record.classNum,jdbcType=INTEGER},
+      class_master = #{record.classMaster,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.entity.Admin">
-    update admin
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.entity.Classes">
+    update classes
     <set>
-      <if test="username != null">
-        username = #{username,jdbcType=VARCHAR},
+      <if test="className != null">
+        class_name = #{className,jdbcType=VARCHAR},
       </if>
-      <if test="password != null">
-        password = #{password,jdbcType=VARCHAR},
+      <if test="classNum != null">
+        class_num = #{classNum,jdbcType=INTEGER},
       </if>
-      <if test="telephone != null">
-        telephone = #{telephone,jdbcType=VARCHAR},
+      <if test="classMaster != null">
+        class_master = #{classMaster,jdbcType=VARCHAR},
       </if>
     </set>
-    where aid = #{aid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.entity.Admin">
-    update admin
-    set username = #{username,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      telephone = #{telephone,jdbcType=VARCHAR}
-    where aid = #{aid,jdbcType=INTEGER}
+  <update id="updateByPrimaryKey" parameterType="com.example.entity.Classes">
+    update classes
+    set class_name = #{className,jdbcType=VARCHAR},
+      class_num = #{classNum,jdbcType=INTEGER},
+      class_master = #{classMaster,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

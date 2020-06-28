@@ -61,40 +61,48 @@
     </bean>
 
     <!--视图解析 ViewTemplate-->
-    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+<!--    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">-->
         <!--jstl标签库：引入依赖 jstl和standard
         返回结果的形式，前缀  后缀-->
-        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
-        <property name="prefix" value="/views/"></property>
-        <property name="suffix" value=".jsp"></property>
-    </bean>
+<!--        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>-->
+<!--        <property name="prefix" value="/views/"></property>-->
+<!--        <property name="suffix" value=".jsp"></property>-->
+<!--    </bean>-->
 
     <!-- 配置freeMarker视图解析器 -->
-<!--        <bean id="viewResolverFtl" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">-->
-<!--            <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>-->
-<!--            <property name="contentType" value="text/html; charset=utf-8"/>-->
-<!--            <property name="cache" value="false"/>-->
-<!--            <property name="suffix" value=".ftl"/>-->
-<!--            <property name="order" value="0"/>-->
-<!--            <property name="requestContextAttribute" value="request"/>-->
-<!--        </bean>-->
+        <bean id="viewResolverFtl" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+            <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
+            <property name="contentType" value="text/html; charset=utf-8"/>
+            <property name="cache" value="false"/>
+            <property name="suffix" value=".ftl"/>
+            <property name="order" value="0"/>
+            <property name="requestContextAttribute" value="request"/>
+        </bean>
 
         <!-- freemarker的配置 -->
-<!--        <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">-->
-<!--            <property name="templateLoaderPath" value="/"></property>&lt;!&ndash;解析路径&ndash;&gt;-->
-<!--            <property name="freemarkerSettings">&lt;!&ndash; 设置FreeMarker环境属性 &ndash;&gt;-->
-<!--                <props>-->
-<!--                    <prop key="template_update_delay">5</prop>&lt;!&ndash;刷新模板的周期，单位为秒 &ndash;&gt;-->
-<!--                    <prop key="default_encoding">UTF-8</prop>&lt;!&ndash;模板的编码格式 &ndash;&gt;-->
-<!--                    <prop key="locale">UTF-8</prop>&lt;!&ndash; 本地化设置 &ndash;&gt;-->
-<!--                    <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>-->
-<!--                    <prop key="time_format">HH:mm:ss</prop>-->
-<!--                    <prop key="number_format">0.####</prop>-->
-<!--                    <prop key="boolean_format">true,false</prop>-->
-<!--                    <prop key="whitespace_stripping">true</prop>-->
-<!--                    <prop key="tag_syntax">auto_detect</prop>-->
-<!--                    <prop key="url_escaping_charset">UTF-8</prop>-->
-<!--                </props>-->
-<!--            </property>-->
-<!--        </bean>-->
+        <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+            <property name="templateLoaderPath" value="/"></property><!--解析路径-->
+            <property name="freemarkerSettings"><!-- 设置FreeMarker环境属性 -->
+                <props>
+                    <prop key="template_update_delay">5</prop><!--刷新模板的周期，单位为秒 -->
+                    <prop key="default_encoding">UTF-8</prop><!--模板的编码格式 -->
+                    <prop key="locale">UTF-8</prop><!-- 本地化设置 -->
+                    <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+                    <prop key="time_format">HH:mm:ss</prop>
+                    <prop key="number_format">0.####</prop>
+                    <prop key="boolean_format">true,false</prop>
+                    <prop key="whitespace_stripping">true</prop>
+                    <prop key="tag_syntax">auto_detect</prop>
+                    <prop key="url_escaping_charset">UTF-8</prop>
+                </props>
+            </property>
+        </bean>
+
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--上传文件的最大大小，单位为字节 -->
+        <property name="maxUploadSize" value="17367648787"></property>
+        <!-- 上传文件的编码 -->
+        <property name="defaultEncoding" value="UTF-8"></property>
+    </bean>
 </beans>
