@@ -16,8 +16,6 @@ public interface SelectcourseMapper {
 
     int insertSelective(Selectcourse record);
 
-    int insertSelectiveByExample(@Param("record") Selectcourse record, @Param("example") SelectcourseExample example);
-
     List<Selectcourse> selectByExample(SelectcourseExample example);
 
     Selectcourse selectByPrimaryKey(Integer selectid);

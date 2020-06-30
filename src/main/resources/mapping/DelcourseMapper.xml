@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.mapping.SelectcourseMapper">
-  <resultMap id="BaseResultMap" type="com.example.entity.Selectcourse">
-    <id column="selectid" jdbcType="INTEGER" property="selectid" />
-    <result column="sid" jdbcType="VARCHAR" property="sid" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="courseid" jdbcType="VARCHAR" property="courseid" />
-    <result column="coursename" jdbcType="VARCHAR" property="coursename" />
+<mapper namespace="com.example.mapping.DelcourseMapper">
+  <resultMap id="BaseResultMap" type="com.example.entity.Delcourse">
+    <id column="delid" jdbcType="INTEGER" property="delid" />
+    <result column="delsid" jdbcType="VARCHAR" property="delsid" />
+    <result column="deltid" jdbcType="VARCHAR" property="deltid" />
+    <result column="delcid" jdbcType="VARCHAR" property="delcid" />
+    <result column="delcontent" jdbcType="VARCHAR" property="delcontent" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -67,15 +67,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    selectid, sid, name, courseid, coursename
+    delid, delsid, deltid, delcid, delcontent
   </sql>
-  <select id="selectByExample" parameterType="com.example.entity.SelectcourseExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.example.entity.DelcourseExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from selectcourse
+    from delcourse
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -86,85 +86,85 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from selectcourse
-    where selectid = #{selectid,jdbcType=INTEGER}
+    from delcourse
+    where delid = #{delid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from selectcourse
-    where selectid = #{selectid,jdbcType=INTEGER}
+    delete from delcourse
+    where delid = #{delid,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.example.entity.SelectcourseExample">
-    delete from selectcourse
+  <delete id="deleteByExample" parameterType="com.example.entity.DelcourseExample">
+    delete from delcourse
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.example.entity.Selectcourse">
-    insert into selectcourse (selectid, sid, name, 
-      courseid, coursename)
-    values (#{selectid,jdbcType=INTEGER}, #{sid,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
-      #{courseid,jdbcType=VARCHAR}, #{coursename,jdbcType=VARCHAR})
+  <insert id="insert" parameterType="com.example.entity.Delcourse">
+    insert into delcourse (delid, delsid, deltid, 
+      delcid, delcontent)
+    values (#{delid,jdbcType=INTEGER}, #{delsid,jdbcType=VARCHAR}, #{deltid,jdbcType=VARCHAR}, 
+      #{delcid,jdbcType=VARCHAR}, #{delcontent,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.example.entity.Selectcourse">
-    insert into selectcourse
+  <insert id="insertSelective" parameterType="com.example.entity.Delcourse">
+    insert into delcourse
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="selectid != null">
-        selectid,
+      <if test="delid != null">
+        delid,
       </if>
-      <if test="sid != null">
-        sid,
+      <if test="delsid != null">
+        delsid,
       </if>
-      <if test="name != null">
-        name,
+      <if test="deltid != null">
+        deltid,
       </if>
-      <if test="courseid != null">
-        courseid,
+      <if test="delcid != null">
+        delcid,
       </if>
-      <if test="coursename != null">
-        coursename,
+      <if test="delcontent != null">
+        delcontent,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="selectid != null">
-        #{selectid,jdbcType=INTEGER},
+      <if test="delid != null">
+        #{delid,jdbcType=INTEGER},
       </if>
-      <if test="sid != null">
-        #{sid,jdbcType=VARCHAR},
+      <if test="delsid != null">
+        #{delsid,jdbcType=VARCHAR},
       </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
+      <if test="deltid != null">
+        #{deltid,jdbcType=VARCHAR},
       </if>
-      <if test="courseid != null">
-        #{courseid,jdbcType=VARCHAR},
+      <if test="delcid != null">
+        #{delcid,jdbcType=VARCHAR},
       </if>
-      <if test="coursename != null">
-        #{coursename,jdbcType=VARCHAR},
+      <if test="delcontent != null">
+        #{delcontent,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.example.entity.SelectcourseExample" resultType="java.lang.Long">
-    select count(*) from selectcourse
+  <select id="countByExample" parameterType="com.example.entity.DelcourseExample" resultType="java.lang.Long">
+    select count(*) from delcourse
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update selectcourse
+    update delcourse
     <set>
-      <if test="record.selectid != null">
-        selectid = #{record.selectid,jdbcType=INTEGER},
+      <if test="record.delid != null">
+        delid = #{record.delid,jdbcType=INTEGER},
       </if>
-      <if test="record.sid != null">
-        sid = #{record.sid,jdbcType=VARCHAR},
+      <if test="record.delsid != null">
+        delsid = #{record.delsid,jdbcType=VARCHAR},
       </if>
-      <if test="record.name != null">
-        name = #{record.name,jdbcType=VARCHAR},
+      <if test="record.deltid != null">
+        deltid = #{record.deltid,jdbcType=VARCHAR},
       </if>
-      <if test="record.courseid != null">
-        courseid = #{record.courseid,jdbcType=VARCHAR},
+      <if test="record.delcid != null">
+        delcid = #{record.delcid,jdbcType=VARCHAR},
       </if>
-      <if test="record.coursename != null">
-        coursename = #{record.coursename,jdbcType=VARCHAR},
+      <if test="record.delcontent != null">
+        delcontent = #{record.delcontent,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -172,40 +172,40 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update selectcourse
-    set selectid = #{record.selectid,jdbcType=INTEGER},
-      sid = #{record.sid,jdbcType=VARCHAR},
-      name = #{record.name,jdbcType=VARCHAR},
-      courseid = #{record.courseid,jdbcType=VARCHAR},
-      coursename = #{record.coursename,jdbcType=VARCHAR}
+    update delcourse
+    set delid = #{record.delid,jdbcType=INTEGER},
+      delsid = #{record.delsid,jdbcType=VARCHAR},
+      deltid = #{record.deltid,jdbcType=VARCHAR},
+      delcid = #{record.delcid,jdbcType=VARCHAR},
+      delcontent = #{record.delcontent,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.entity.Selectcourse">
-    update selectcourse
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.entity.Delcourse">
+    update delcourse
     <set>
-      <if test="sid != null">
-        sid = #{sid,jdbcType=VARCHAR},
+      <if test="delsid != null">
+        delsid = #{delsid,jdbcType=VARCHAR},
       </if>
-      <if test="name != null">
-        name = #{name,jdbcType=VARCHAR},
+      <if test="deltid != null">
+        deltid = #{deltid,jdbcType=VARCHAR},
       </if>
-      <if test="courseid != null">
-        courseid = #{courseid,jdbcType=VARCHAR},
+      <if test="delcid != null">
+        delcid = #{delcid,jdbcType=VARCHAR},
       </if>
-      <if test="coursename != null">
-        coursename = #{coursename,jdbcType=VARCHAR},
+      <if test="delcontent != null">
+        delcontent = #{delcontent,jdbcType=VARCHAR},
       </if>
     </set>
-    where selectid = #{selectid,jdbcType=INTEGER}
+    where delid = #{delid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.entity.Selectcourse">
-    update selectcourse
-    set sid = #{sid,jdbcType=VARCHAR},
-      name = #{name,jdbcType=VARCHAR},
-      courseid = #{courseid,jdbcType=VARCHAR},
-      coursename = #{coursename,jdbcType=VARCHAR}
-    where selectid = #{selectid,jdbcType=INTEGER}
+  <update id="updateByPrimaryKey" parameterType="com.example.entity.Delcourse">
+    update delcourse
+    set delsid = #{delsid,jdbcType=VARCHAR},
+      deltid = #{deltid,jdbcType=VARCHAR},
+      delcid = #{delcid,jdbcType=VARCHAR},
+      delcontent = #{delcontent,jdbcType=VARCHAR}
+    where delid = #{delid,jdbcType=INTEGER}
   </update>
 </mapper>

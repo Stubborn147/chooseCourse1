@@ -59,16 +59,4 @@ public class SelectcourseController {
     public List<Selectcourse> getAllSelectCurse(){
         return selectCourseService.getAllSelectCourse();
     }
-
-    @RequestMapping("/delcourse")
-    @ResponseBody
-    public boolean insertdelcourse(String sid,String courseid,String delcourse){
-        boolean result=selectCourseService.insertDelCourse(sid,courseid,delcourse);
-        if(result){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
 }

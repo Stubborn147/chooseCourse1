@@ -53,12 +53,4 @@ public class SelectCourseServiceImpl implements SelectCourseService {
         return selectcourseMapper.selectByExample(example);
     }
 
-    @Override
-    public boolean insertDelCourse(String sid, String courseid, String delcourse) {
-        SelectcourseExample example=new SelectcourseExample();
-        example.createCriteria().andSidEqualTo(sid).andCourseidEqualTo(courseid);
-        Selectcourse selectcourse=new Selectcourse();
-        selectcourse.setDelcourse(delcourse);
-        return selectcourseMapper.insertSelectiveByExample(selectcourse,example)>0?true:false;
-    }
 }

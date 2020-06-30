@@ -11,8 +11,6 @@ public class Selectcourse {
 
     private String coursename;
 
-    private String delcourse;
-
     public Integer getSelectid() {
         return selectid;
     }
@@ -51,13 +49,5 @@ public class Selectcourse {
 
     public void setCoursename(String coursename) {
         this.coursename = coursename == null ? null : coursename.trim();
-    }
-
-    public String getDelcourse() {
-        return delcourse;
-    }
-
-    public void setDelcourse(String delcourse) {
-        this.delcourse = delcourse == null ? null : delcourse.trim();
     }
 }

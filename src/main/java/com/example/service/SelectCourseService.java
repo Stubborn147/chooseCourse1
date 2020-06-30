@@ -16,6 +16,5 @@ public interface SelectCourseService {
 
     List<Selectcourse> getAllSelectCourse();
 
-    boolean insertDelCourse(String sid,String courseid,String delcourse);
 
 }
