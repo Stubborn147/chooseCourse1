@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-
 import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedOutputStream;
 import java.io.IOException;
@@ -152,6 +151,17 @@ public class StudentController {
             e.printStackTrace();
         }
 
+    }
+    
+    @RequestMapping("/insertStudent")
+    @ResponseBody
+    public boolean insert(Student student){
+        boolean result=studentService.insertStudent(student);
+        if(result){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }

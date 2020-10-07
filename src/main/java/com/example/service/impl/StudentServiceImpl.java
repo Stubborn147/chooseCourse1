@@ -58,4 +58,9 @@ public class StudentServiceImpl implements StudentService {
         return studentMapper.updateByExampleSelective(student,example)>0?true:false;
     }
 
+    @Override
+    public boolean insertStudent(Student student) {
+        return studentMapper.insertSelective(student)>0 ?true:false;
+    }
+
 }

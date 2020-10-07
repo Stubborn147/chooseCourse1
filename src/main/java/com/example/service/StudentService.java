@@ -14,5 +14,6 @@ public interface StudentService {
     void importStudent(List<Student> students);
     boolean updateStudent(Student student, StudentExample example);
     boolean updatePwd(String sid,String pwd);
+    boolean insertStudent(Student student);
 
 }
